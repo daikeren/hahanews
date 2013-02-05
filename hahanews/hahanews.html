@@ -1,0 +1,44 @@
+<head>
+  <title>HAHANews</title>
+<script type="text/javascript" src="https://raw.github.com/timrwood/moment/1.7.2/min/moment.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+<h1>HAHANews</h1>
+  {{> link_list }}
+  {{> add_new_link }}
+</div>
+<script type="text/javascript">
+
+</script>
+</body>
+
+
+<template name="link_list">
+    <ol>
+    {{#each links }}
+    <li>
+        {{> link_detail }}
+    </li>
+    {{/each }}
+    </ol>
+</template>
+
+<template name="link_detail">
+  <div id="link-{{id}}">
+    <i class="icon-arrow-up"></i>
+    <i class="icon-arrow-down"></i>
+    <span><a href="{{url}}">{{ title }} ({{url}})</a></span>
+    <p><strong>{{ score }} 分</strong> {{ date }}
+    </div>
+</template>
+
+<template name="add_new_link">
+    <h2>新增一條 HAHANews</h2>
+    <div id="new_link_form">
+        標題 <input id="title">
+        URL <input id="url">
+        <input type="button" value="Add" id="add_url" />
+    </div>
+</template>
