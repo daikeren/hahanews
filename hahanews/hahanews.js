@@ -19,7 +19,7 @@ if (Meteor.isClient) {
     'click input#add_url' : function () {
       var new_url = $('#url').val();
       var new_title = $('#title').val();
-      var url_row = Links.findOne( {url:new_url} );
+
       Links.insert(
       {
         url : new_url,
